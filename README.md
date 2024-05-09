@@ -1,5 +1,3 @@
-Here is a suggested detailed README file for the Solana Prerequisites exercise:
-
 # Solana Prerequisites
 
 This repository contains the code for completing the Solana Prerequisites for the Q2 2024 cohort of the Web3 Builders Alliance (WBA) program. The prerequisites involve setting up a Solana development environment, generating a keypair, claiming an airdrop, making transfers, and enrolling in the WBA program using a custom Solana program.
