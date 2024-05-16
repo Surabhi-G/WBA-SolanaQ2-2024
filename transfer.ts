@@ -47,11 +47,14 @@ import { Transaction, SystemProgram, Connection, Keypair,
             console.log (balance);
             // Create a test transaction to calculate fees
             const transaction = new Transaction().add(
-            SystemProgram.transfer({
-            fromPubkey: from.publicKey,
-            toPubkey: to,
-            lamports: balance,
+            
+            
+                SystemProgram.transfer({
+                fromPubkey: from.publicKey,
+                toPubkey: to,
+                lamports: balance,
                 })
+                
             );
             transaction.recentBlockhash = (await
                 connection.getLatestBlockhash('confirmed')).blockhash;
@@ -59,8 +62,10 @@ import { Transaction, SystemProgram, Connection, Keypair,
                 const fee = (await
                 connection.getFeeForMessage(transaction.compileMessage(),
                 'confirmed')).value || 0;
+                
                 // Remove our transfer instruction to replace it
                 transaction.instructions.pop();
+               
                 // Now add the instruction back with correct amount of lamports
                 transaction.add(
                 SystemProgram.transfer({
